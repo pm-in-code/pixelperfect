@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { assetPath } from '../utils/assetPath'
 import styles from './Screen7MoodGrid.module.css'
 
-/** Те же ассеты, что экраны 7.1–7.4 — внизу сетки были пустые плейсхолдеры в screen-7.png */
 const CARDS: {
   slug: string
   label: string
@@ -34,7 +33,7 @@ export function Screen7MoodGrid() {
     navTimerRef.current = window.setTimeout(() => {
       navTimerRef.current = null
       navigate(`/screen/7/mood/${slug}`)
-    }, 240)
+    }, 280)
   }
 
   return (
@@ -54,8 +53,10 @@ export function Screen7MoodGrid() {
             aria-label={card.label}
             aria-pressed={selectedSlug === card.slug}
           >
-            <div className={styles.cardImgWrap}>
-              <img className={`${styles.cardImg} ${card.imgClass}`} src={assetPath(card.src)} alt="" />
+            <div className={styles.cardArt}>
+              <div className={styles.cardImgViewport}>
+                <img className={`${styles.cardImg} ${card.imgClass}`} src={assetPath(card.src)} alt="" />
+              </div>
             </div>
             <span className={styles.cardLabel}>{card.label}</span>
           </button>
