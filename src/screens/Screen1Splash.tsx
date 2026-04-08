@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { PulseRings } from '../components/PulseRings'
 import styles from './Screen1Splash.module.css'
 
-const SPLASH_DELAY_MS = 7000
+const SPLASH_DELAY_MS = 4000
 
 export function Screen1Splash() {
   const navigate = useNavigate()
