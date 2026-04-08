@@ -60,4 +60,4 @@ The site will be available at:
 
 ## Assets
 
-Screen PNGs live under `public/assets/screens/` (`screen-1.png` … `screen-7.png`, `screen-7-1.png` … `screen-7-4.png`).
+Screen PNGs live under `public/assets/screens/` (`screen-1.png` … `screen-6.png`, `screen-7-1.png` … `screen-7-4.png`). The mood grid (screen 7) is built in HTML/CSS; card thumbnails use the same images as the mood result screens (`screen-7-1` … `screen-7-4`). The legacy `screen-7.png` full mock is optional and unused by the app.
