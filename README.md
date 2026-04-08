@@ -35,6 +35,13 @@ The site will be available at:
 
 `https://pm-in-code.github.io/pixelperfect/`
 
+### If you see “404 There isn’t a GitHub Pages site here”
+
+1. **Pages source:** **Settings → Pages → Build and deployment** — set **Source** to **GitHub Actions** (not “Deploy from a branch”). Until a successful Actions deploy runs, the site URL shows that generic 404.
+2. **Workflow:** Open the **Actions** tab and confirm the latest **Deploy to GitHub Pages** run is **green**. A failed build means nothing is published.
+3. **First deploy:** If GitHub asks to approve the **`github-pages` environment**, open the run and approve it so deployment can finish.
+4. **Push this repo:** The workflow only runs on pushes to `main`. After pulling these workflow fixes, run `git push origin main`. You can also trigger **Actions → Deploy to GitHub Pages → Run workflow** manually (`workflow_dispatch`).
+
 ### Important
 
 - `vite.config.ts` sets `base: '/pixelperfect/'` so asset URLs match the project Pages URL.
