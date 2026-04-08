@@ -40,25 +40,14 @@ export function Screen7MoodGrid() {
         </div>
         <div className={styles.bottomSpacer} aria-hidden />
         <div className={styles.checkboxWrap}>
-          <label className={styles.checkboxLabel}>
-            <input
-              type="checkbox"
-              className={styles.checkboxInput}
-              checked={remind}
-              onChange={(e) => setRemind(e.target.checked)}
-            />
-            <span className={`${styles.checkboxBox} ${remind ? styles.checkboxBoxChecked : ''}`}>
-              {remind && (
-                <svg className={styles.checkIcon} viewBox="0 0 12 12" aria-hidden>
-                  <path
-                    fill="currentColor"
-                    d="M10.3 1.5 4.5 9.2 1.7 6.4 0.5 7.6 4.5 11.5 11.5 2.7z"
-                  />
-                </svg>
-              )}
-            </span>
-            Remind me daily to stay active
-          </label>
+          <button
+            type="button"
+            role="checkbox"
+            aria-checked={remind}
+            aria-label="Remind me daily to stay active"
+            className={styles.checkboxHit}
+            onClick={() => setRemind((v) => !v)}
+          />
         </div>
       </div>
     </div>
