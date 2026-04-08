@@ -17,3 +17,26 @@
 .wide {
   max-width: 100%;
 }
+
+/**
+ * Transparent tap target over the NEXT / Continue drawn in the PNG — avoids double buttons.
+ */
+.invisibleHit {
+  width: 100%;
+  max-width: 320px;
+  min-height: 52px;
+  height: 56px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  box-shadow: none;
+  color: transparent;
+}
+
+.invisibleHit:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
