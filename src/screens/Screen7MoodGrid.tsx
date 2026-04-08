@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { assetPath } from '../utils/assetPath'
 import styles from './Screen7MoodGrid.module.css'
@@ -19,6 +19,23 @@ const CARDS: {
 export function Screen7MoodGrid() {
   const navigate = useNavigate()
   const [remind, setRemind] = useState(true)
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(null)
+  const navTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (navTimerRef.current) window.clearTimeout(navTimerRef.current)
+    }
+  }, [])
+
+  const onPickCard = (slug: string) => {
+    if (navTimerRef.current) window.clearTimeout(navTimerRef.current)
+    setSelectedSlug(slug)
+    navTimerRef.current = window.setTimeout(() => {
+      navTimerRef.current = null
+      navigate(`/screen/7/mood/${slug}`)
+    }, 240)
+  }
 
   return (
     <div className={styles.page}>
@@ -32,9 +49,10 @@ export function Screen7MoodGrid() {
           <button
             key={card.slug}
             type="button"
-            className={styles.card}
-            onClick={() => navigate(`/screen/7/mood/${card.slug}`)}
+            className={`${styles.card} ${selectedSlug === card.slug ? styles.cardSelected : ''}`}
+            onClick={() => onPickCard(card.slug)}
             aria-label={card.label}
+            aria-pressed={selectedSlug === card.slug}
           >
             <div className={styles.cardImgWrap}>
               <img className={`${styles.cardImg} ${card.imgClass}`} src={assetPath(card.src)} alt="" />
