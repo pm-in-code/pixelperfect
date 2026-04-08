@@ -1,0 +1,103 @@
+.root {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 calc(12px + env(safe-area-inset-bottom, 0px));
+}
+
+.topSpacer {
+  flex: 0 0 32%;
+  min-height: 200px;
+}
+
+.cardGrid {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  width: calc(100% - 40px);
+  max-width: 340px;
+  margin: 0 auto;
+  min-height: 0;
+  align-self: center;
+}
+
+.cardHit {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 24px;
+  min-height: 120px;
+}
+
+.bottomSpacer {
+  flex: 0 0 6%;
+}
+
+.checkboxWrap {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px 20px;
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-checkbox);
+  user-select: none;
+}
+
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkboxBox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--color-checkbox);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--color-white);
+}
+
+.checkboxBoxChecked {
+  background: var(--color-checkbox);
+  border-color: var(--color-checkbox);
+}
+
+.checkIcon {
+  width: 12px;
+  height: 12px;
+  color: var(--color-white);
+}

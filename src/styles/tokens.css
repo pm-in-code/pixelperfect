@@ -1,0 +1,62 @@
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
+    system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --color-splash-bg: #8194e3;
+  --color-signin-bg: #7d91e3;
+  --color-periwinkle: #7c8ee0;
+  --color-periwinkle-mid: #7e91e1;
+  --color-periwinkle-card: #8294e1;
+  --color-lime: #dfff00;
+  --color-lime-alt: #d4ff00;
+  --color-lime-screen6: #d4ff00;
+  --color-badge-blue: #8a9cfe;
+  --color-grey-top: #e0e0e0;
+  --color-dark-footer: #222222;
+  --color-dark-bg: #1a1a1a;
+  --color-panel-grey: #d9d9d9;
+  --color-mood-bg: #f8f9ff;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-legal-muted: rgba(255, 255, 255, 0.82);
+  --color-checkbox: #8a96d6;
+
+  --radius-pill: 999px;
+  --radius-card: 24px;
+  --radius-badge: 8px;
+
+  --shadow-button: 0 4px 14px rgba(0, 0, 0, 0.12);
+  --shadow-card-soft: 0 10px 30px rgba(100, 110, 200, 0.12);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-sans);
+}
+
+body {
+  background: #1a1a1a;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+}

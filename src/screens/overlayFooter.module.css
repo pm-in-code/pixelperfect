@@ -1,0 +1,19 @@
+.footer {
+  margin-top: auto;
+  padding: 0 28px calc(10vh + env(safe-area-inset-bottom, 0px)) 28px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.footerTight {
+  padding-bottom: calc(8vh + env(safe-area-inset-bottom, 0px));
+}
+
+.footerDark {
+  padding-bottom: calc(12vh + env(safe-area-inset-bottom, 0px));
+}
+
+.wide {
+  max-width: 100%;
+}
