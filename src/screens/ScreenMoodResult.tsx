@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { FullBleedScreen } from '../components/FullBleedScreen'
+import { PillButton } from '../components/PillButton'
 import footer from './overlayFooter.module.css'
 
 const MOOD_IMAGES: Record<string, string> = {
@@ -19,12 +20,9 @@ export function ScreenMoodResult() {
     <FullBleedScreen imageSrc={src} alt="">
       <div style={{ flex: 1 }} />
       <div className={`${footer.footer} ${footer.footerTight}`}>
-        <button
-          type="button"
-          className={`${footer.invisibleHit} ${footer.wide}`}
-          onClick={() => navigate('/done')}
-          aria-label="Continue"
-        />
+        <PillButton caps className={footer.wide} onClick={() => navigate('/done')}>
+          Continue
+        </PillButton>
       </div>
     </FullBleedScreen>
   )
